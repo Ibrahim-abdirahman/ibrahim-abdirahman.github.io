@@ -1,491 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Abdirahman Ibrahim | Humanitarian Operational Analytics Portfolio</title>
-
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI, Arial, sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#07111f;color:#fff;line-height:1.6}
+.container{width:min(92%,1300px);margin:auto}
+nav{position:sticky;top:0;background:#07111fee;backdrop-filter:blur(8px);z-index:1000;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-wrap{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.nav-links{display:flex;gap:20px;flex-wrap:wrap}
+.nav-links a{color:#cbd5e1;text-decoration:none}
+header{padding:110px 0;background:linear-gradient(135deg,#07111f,#0b1e36)}
+.badge{display:inline-block;padding:10px 18px;border-radius:30px;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.2);color:#67e8f9;margin-bottom:20px}
+h1{font-size:clamp(2.8rem,6vw,4.5rem);line-height:1.1;margin-bottom:20px}
+.highlight{color:#22d3ee}
+.hero-text{max-width:850px;font-size:clamp(1rem,2vw,1.35rem);color:#cbd5e1;margin-bottom:40px}
+.buttons{display:flex;gap:15px;flex-wrap:wrap}
+.btn{padding:14px 28px;border-radius:12px;text-decoration:none;font-weight:600;transition:.3s}
+.btn:hover{transform:translateY(-3px)}
+.primary{background:#22d3ee;color:#000}
+.secondary{border:1px solid rgba(255,255,255,.2);color:#fff}
+section{padding:90px 0}
+.section-title{font-size:clamp(2rem,4vw,2.6rem);margin-bottom:15px}
+.section-text{color:#94a3b8;margin-bottom:35px;max-width:900px}
+.dashboard-image{width:100%;height:auto;border-radius:20px;border:1px solid rgba(255,255,255,.1)}
+.skills{display:flex;flex-wrap:wrap;gap:14px}
+.skill{padding:12px 18px;border-radius:30px;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.2);color:#67e8f9}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:30px}
+.card h3{margin-bottom:10px}
+.stack{color:#22d3ee;font-weight:600;display:block;margin-bottom:10px}
+footer{padding:40px 0;border-top:1px solid rgba(255,255,255,.08);text-align:center;color:#94a3b8}
+@media(max-width:768px){
+header{text-align:center;padding:70px 0}
+.buttons{flex-direction:column}
+.btn{width:100%;text-align:center}
+.nav-wrap{flex-direction:column;gap:10px}
+.skill{width:100%;text-align:center}
+section{padding:60px 0}
 }
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#07111f;
-color:white;
-line-height:1.6;
-}
-
-.container{
-width:90%;
-max-width:1300px;
-margin:auto;
-}
-
-header{
-padding:120px 0;
-background:linear-gradient(135deg,#07111f,#0b1e36);
-}
-
-.hero-subtitle{
-display:inline-block;
-padding:10px 18px;
-border-radius:30px;
-background:rgba(34,211,238,0.1);
-border:1px solid rgba(34,211,238,0.2);
-color:#67e8f9;
-margin-bottom:25px;
-font-size:14px;
-}
-
-h1{
-font-size:68px;
-line-height:1.1;
-margin-bottom:20px;
-}
-
-.highlight{
-color:#22d3ee;
-}
-
-.hero-text{
-max-width:850px;
-font-size:22px;
-color:#cbd5e1;
-margin-bottom:40px;
-}
-
-.buttons{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-}
-
-.btn{
-display:inline-block;
-padding:15px 30px;
-border-radius:12px;
-font-weight:600;
-text-decoration:none;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:translateY(-4px);
-}
-
-.primary{
-background:#22d3ee;
-color:black;
-}
-
-.secondary{
-border:1px solid rgba(255,255,255,0.2);
-color:white;
-}
-
-section{
-padding:90px 0;
-}
-
-.section-title{
-font-size:42px;
-margin-bottom:15px;
-}
-
-.section-text{
-color:#94a3b8;
-max-width:900px;
-margin-bottom:40px;
-font-size:18px;
-}
-
-.dashboard-image{
-width:100%;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.1);
-box-shadow:0 20px 50px rgba(0,0,0,0.3);
-}
-
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-}
-
-.skill{
-background:rgba(34,211,238,0.1);
-border:1px solid rgba(34,211,238,0.2);
-color:#67e8f9;
-padding:12px 20px;
-border-radius:50px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:30px;
-}
-
-.card{
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.08);
-border-radius:20px;
-padding:30px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-border-color:#22d3ee;
-}
-
-.card h3{
-font-size:24px;
-margin-bottom:12px;
-}
-
-.card p{
-color:#cbd5e1;
-}
-
-.stack{
-color:#22d3ee;
-display:block;
-margin-bottom:12px;
-font-weight:600;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:40px;
-}
-
-.stat-box{
-background:rgba(255,255,255,0.04);
-padding:25px;
-border-radius:18px;
-border:1px solid rgba(255,255,255,0.08);
-}
-
-.stat-box h3{
-color:#22d3ee;
-font-size:28px;
-margin-bottom:8px;
-}
-
-footer{
-padding:50px 0;
-border-top:1px solid rgba(255,255,255,0.08);
-text-align:center;
-color:#94a3b8;
-}
-
 </style>
 </head>
-
 <body>
+<nav>
+<div class="container nav-wrap">
+<div><strong>Abdirahman Ibrahim</strong></div>
+<div class="nav-links">
+<a href="#projects">Projects</a>
+<a href="#expertise">Expertise</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+</nav>
 
 <header>
-
 <div class="container">
-
-<div class="hero-subtitle">
-Humanitarian Operational Analytics Portfolio
-</div>
-
-<h1>
-Abdirahman Ibrahim<br>
-<span class="highlight">Humanitarian Data Analyst</span>
-</h1>
-
-<p class="hero-text">
-Data Analyst specializing in humanitarian operations, delivery monitoring, beneficiary data management, reconciliation analysis, operational reporting, and dashboard development using Power BI, Tableau, SQL, Python, and Excel.
-</p>
-
+<div class="badge">Humanitarian Operational Analytics Portfolio</div>
+<h1>Abdirahman Ibrahim<br><span class="highlight">Humanitarian Data Analyst</span></h1>
+<p class="hero-text">Data Analyst specializing in humanitarian operations, delivery monitoring, beneficiary data management, reconciliation analysis, operational reporting, and dashboard development using Power BI, Tableau, SQL, Python, and Excel.</p>
 <div class="buttons">
-
-<a href="#projects" class="btn primary">
-View Projects
-</a>
-
-<a href="https://github.com/Ibrahim-abdirahman" class="btn secondary">
-GitHub Profile
-</a>
-
-<a href="YOUR_TABLEAU_LINK_HERE" class="btn secondary">
-Tableau Public
-</a>
-
+<a href="#projects" class="btn primary">View Projects</a>
+<a href="https://github.com/Ibrahim-abdirahman" class="btn secondary">GitHub Profile</a>
+<a href="#" class="btn secondary">Tableau Public</a>
 </div>
-
 </div>
-
 </header>
 
 <section>
-
 <div class="container">
-
-<h2 class="section-title">
-Featured Dashboard
-</h2>
-
-<p class="section-text">
-Humanitarian Delivery Monitoring Dashboard designed to support operational visibility, delivery cycle tracking, beneficiary monitoring, reconciliation oversight, validation processes, and performance reporting.
-</p>
-
-<img
-src="images/humanitarian-delivery-dashboard.png"
-alt="Humanitarian Delivery Monitoring Dashboard"
-class="dashboard-image">
-
+<h2 class="section-title">Featured Dashboard</h2>
+<p class="section-text">Humanitarian Delivery Monitoring Dashboard supporting operational visibility, beneficiary monitoring, reconciliation oversight, and delivery cycle tracking.</p>
+<img src="images/humanitarian-delivery-dashboard.png" class="dashboard-image" alt="Dashboard">
 </div>
-
 </section>
 
-<section>
-
+<section id="expertise">
 <div class="container">
-
-<h2 class="section-title">
-Humanitarian Analytics Expertise
-</h2>
-
+<h2 class="section-title">Humanitarian Analytics Expertise</h2>
 <div class="skills">
-
 <div class="skill">Delivery Monitoring</div>
 <div class="skill">Beneficiary Tracking</div>
 <div class="skill">Reconciliation</div>
-<div class="skill">Operational Reporting</div>
 <div class="skill">CBT Operations</div>
-<div class="skill">SCOPE Support</div>
 <div class="skill">Data Quality Assurance</div>
 <div class="skill">Anomaly Detection</div>
-<div class="skill">Dashboard Development</div>
+<div class="skill">Operational Reporting</div>
 <div class="skill">Programme Monitoring</div>
-<div class="skill">Data Validation</div>
-<div class="skill">Humanitarian Analytics</div>
-
 </div>
-
 </div>
-
 </section>
 
-<section>
-
+<section id="experience">
 <div class="container">
-
-<h2 class="section-title">
-Professional Experience
-</h2>
-
+<h2 class="section-title">Professional Experience</h2>
 <div class="grid">
-
-<div class="card">
-
-<h3>FAO</h3>
-
-<p>
-Data Analyst & Information Technology Assistant supporting programme monitoring, operational analytics, dashboard reporting, logistics reporting, and evidence-based operational decision-making.
-</p>
-
+<div class="card"><h3>FAO</h3><p>Data Analyst & IT Assistant supporting operational analytics, reporting, dashboards, and programme monitoring.</p></div>
+<div class="card"><h3>World Food Programme (WFP)</h3><p>IT Operations Assistant supporting SCOPE, CBT operations, beneficiary validation, reconciliation, and delivery cycle monitoring.</p></div>
 </div>
-
-<div class="card">
-
-<h3>World Food Programme (WFP)</h3>
-
-<p>
-IT Operations Assistant supporting SCOPE and CBT operations through beneficiary validation, reconciliation, delivery cycle monitoring, dashboard review, and operational reporting.
-</p>
-
 </div>
-
-</div>
-
-</div>
-
 </section>
 
 <section id="projects">
-
 <div class="container">
-
-<h2 class="section-title">
-Portfolio Projects
-</h2>
-
-<p class="section-text">
-Operational analytics and humanitarian reporting projects focused on delivery monitoring, reconciliation, anomaly detection, beneficiary tracking, and decision-support analytics.
-</p>
-
+<h2 class="section-title">Portfolio Projects</h2>
 <div class="grid">
-
-<div class="card">
-
-<span class="stack">
-Power BI • SQL • Data Modelling
-</span>
-
-<h3>
-Humanitarian Delivery Monitoring Dashboard
-</h3>
-
-<p>
-Executive-level operational dashboard designed to monitor delivery cycle performance, beneficiary assistance, validation outcomes, reconciliation status, and geographic distribution of humanitarian operations.
-</p>
-
+<div class="card"><span class="stack">Power BI • SQL</span><h3>Humanitarian Delivery Monitoring Dashboard</h3><p>Executive operational monitoring dashboard for delivery performance, validation, reconciliation, and beneficiary analytics.</p></div>
+<div class="card"><span class="stack">Power BI</span><h3>Beneficiary Reconciliation & Anomaly Detection</h3><p>Dashboard focused on duplicates, mismatches, data quality monitoring, and anomaly detection.</p></div>
+<div class="card"><span class="stack">Tableau</span><h3>CBT Operational Analytics</h3><p>Interactive dashboard analyzing redemption monitoring and cash-based transfer operational performance.</p></div>
 </div>
-
-<div class="card">
-
-<span class="stack">
-Power BI • Data Quality
-</span>
-
-<h3>
-Beneficiary Reconciliation & Anomaly Detection
-</h3>
-
-<p>
-Operational analytics dashboard focused on duplicate detection, reconciliation workflows, data quality monitoring, validation controls, and anomaly identification.
-</p>
-
 </div>
-
-<div class="card">
-
-<span class="stack">
-Tableau • Excel
-</span>
-
-<h3>
-CBT Operational Analytics Dashboard
-</h3>
-
-<p>
-Interactive dashboard analyzing beneficiary trends, redemption monitoring, assistance delivery performance, and operational indicators across cash-based transfer programmes.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-<section>
-
+<section id="contact">
 <div class="container">
-
-<h2 class="section-title">
-Technical Stack
-</h2>
-
-<div class="skills">
-
-<div class="skill">Power BI</div>
-<div class="skill">Tableau</div>
-<div class="skill">SQL</div>
-<div class="skill">Python</div>
-<div class="skill">Excel</div>
-<div class="skill">Power Query</div>
-<div class="skill">DAX</div>
-<div class="skill">Data Modelling</div>
-<div class="skill">ETL</div>
-<div class="skill">Data Visualization</div>
-<div class="skill">Information Management</div>
-<div class="skill">Dashboard Design</div>
-
+<h2 class="section-title">Contact</h2>
+<p class="section-text">Interested in humanitarian analytics, information management, operational reporting, and dashboard development opportunities.</p>
 </div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<h2 class="section-title">
-Portfolio Focus
-</h2>
-
-<div class="stats">
-
-<div class="stat-box">
-<h3>Humanitarian Analytics</h3>
-<p>Operational monitoring, beneficiary tracking, and programme reporting.</p>
-</div>
-
-<div class="stat-box">
-<h3>Operational Intelligence</h3>
-<p>Delivery monitoring, reconciliation, anomaly detection, and assurance reporting.</p>
-</div>
-
-<div class="stat-box">
-<h3>Data Visualization</h3>
-<p>Power BI and Tableau dashboards supporting evidence-based decision-making.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<h2 class="section-title">
-Contact
-</h2>
-
-<p class="section-text">
-Interested in humanitarian analytics, operational reporting, information management, dashboard development, or data visualization opportunities.
-</p>
-
-<div class="buttons">
-
-<a href="https://github.com/Ibrahim-abdirahman" class="btn primary">
-GitHub
-</a>
-
-<a href="YOUR_TABLEAU_LINK_HERE" class="btn secondary">
-Tableau Public
-</a>
-
-</div>
-
-</div>
-
 </section>
 
 <footer>
-
-<div class="container">
-
 Humanitarian Operational Analytics Portfolio • Abdirahman Ibrahim
-
-</div>
-
 </footer>
-
 </body>
 </html>
