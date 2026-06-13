@@ -81,7 +81,7 @@ header{
 }
 
 h1{
-    font-size:clamp(3rem,6vw,5rem);
+    font-size:clamp(2.3rem,5vw,5rem);
     line-height:1.1;
     margin-bottom:20px;
 }
@@ -276,6 +276,10 @@ footer{
         flex-direction:column;
         gap:15px;
     }
+    .nav-links{
+    justify-content:center;
+    gap:16px;
+}
 
     .methodology{
         flex-direction:column;
@@ -284,6 +288,12 @@ footer{
     .arrow{
         transform:rotate(90deg);
     }
+    .byline{
+    display:block;
+    font-size:.55em;
+    font-weight:600;
+    margin-top:10px;
+}
 }
 </style>
 
@@ -299,7 +309,7 @@ Humanitarian Operational Analytics
 </div>
 
 <div class="nav-links">
-<a href="#solutions">Solutions</a>
+<a href="#solutions">Projects</a>
 <a href="#capabilities">Capabilities</a>
 <a href="#context">Context</a>
 <a href="#technology">Technology</a>
@@ -314,12 +324,14 @@ Humanitarian Operational Analytics
 <div class="container">
 
 <div class="badge">
-Humanitarian Analytics Showcase
+Executive Analytics Portfolio
 </div>
 
 <h1>
 Humanitarian Operational Analytics<br>
-<span class="highlight">by Abdirahman Ibrahim</span>
+<small class="highlight byline">
+by Abdirahman Ibrahim
+</small>
 </h1>
 
 <p class="hero-text">
